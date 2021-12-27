@@ -1,20 +1,37 @@
 table td {
-	width: 25px;
-	height: 25px;
+	width: 35px;
+	height: 35px;
 	border: 1px solid black;
 	text-align: center;
 	font-weight: bold;
+	user-select: none;
+	font-size: 20px;
 }
+table td:hover {
+	background: #e0ffd6;
+	color: #fff;
+}
+
 .black{
-	background-color: rgb(255, 237, 154);
+	background-color: rgb(36, 204, 255);
 }
+
 .white{
 	background-color: rgb(233, 255, 253);
 }
+
 .coordinate {
 	width: 10px;
 	height: 10px;
 	border: 1px solid black;
 	text-align: center;
 	font-weight: bold;
+	background-color: lavender;
+}
+
+.from{
+	background-color: seagreen;
+}
+.where{
+	background-color: springgreen;
 }
