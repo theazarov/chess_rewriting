@@ -108,7 +108,7 @@ function show_map(board) {
 
       if (x == 0 || y == 0) {
         td.removeAttribute("class");
-        x == 0 ? (td.innerHTML = "x" + y) : (td.innerHTML = "y" + x);
+        x == 0 ? (td.innerHTML = "y" + y) : (td.innerHTML = "x" + x);
         td.classList.add("coordinate");
       }
       if (x > 0 && y > 0) {
@@ -124,6 +124,10 @@ function show_map(board) {
               : td.classList.add("where");
         }
         td.innerHTML = figure_to_html(theMap[x][y]);
+
+        td.addEventListener('click', function(){
+            console.log(x + ' ' + y)
+          })
       }
 
       tr.appendChild(td);
