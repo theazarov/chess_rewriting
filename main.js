@@ -35,14 +35,35 @@ function init_map() {
   ];
 }
 
+function can_move(sx, sy, dx, dy) {
+  if (!can_move_from(sx, sy)) {
+    return false
+  }
+  if (!can_move_to(dx, dy)) {
+    return false
+  }
+  if (is_correct_move(sx, sy, dx, dy)) {
+    return false
+  }
+  return true
+}
+
+function is_correct_move() {
+
+}
+
 function mark_moves_from() {
   init_inf();
 
-  for (let x = 0; x <= 8; x++) {
-    for (let y = 0; y <= 8; y++) {
-      if (x > 0 && y > 0) {
-        if (can_move_from(x, y)) {
-          theInf[x][y] = "1";
+  for (let sx = 0; sx <= 8; sx++) {
+    for (let sy = 0; sy <= 8; sy++) {
+      for (let dx = 0; dx <= 8; dx++) {
+        for (let dy = 0; dy <= 8; dy++) {
+          if (sx > 0 && sy > 0) {
+            if (can_move(sx, sy, dx, dy)) {
+              theInf[sx][sy] = "1";
+            }
+          }
         }
       }
     }
